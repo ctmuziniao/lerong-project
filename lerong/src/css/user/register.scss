@@ -1,0 +1,127 @@
+@import '../modules/base.scss';
+
+.regist-box{
+    width: 100%;
+    height: 880px;
+    .top{
+        width: 100%;
+        height: 92px;
+        background: #fff;
+        .logo{
+            width: 176px;
+            height: 60px;
+            float: left;
+            margin-top: 20px;
+        }
+        ul{
+            float: left;
+            li{
+                font-size: 14px;
+                float: left;
+                margin-top: 60px;
+                margin-left: 15px;
+                color: #a4a4a4;
+                a{
+                    color: #a4a4a4;
+                    text-decoration: underline;
+                }
+                a:hover{
+                    color: #2884c7;
+                }
+            }
+            .first{
+                margin-left: 750px;
+            }
+        }
+    }
+    .regist-box-bg{
+        width: 100%;
+        height: 788px;
+        background: url(../../images/bg.jpg) no-repeat center;
+        background-size: cover;
+        .regist{
+            width: 430px;
+            height: 460px;
+            background: #fff;
+            float: right;
+            margin-top: 20px;
+            margin-right: 10px;
+            .wrap{
+                width: 380px;
+                height: 368px;
+                margin: 0 auto;
+                .w-top{
+                    height: 40px;
+                    margin-top: 20px;
+                    p{
+                        float: left;
+                        font-size: 18px;
+                        color: #333;
+                    }
+                    a{
+                        float: right;
+                        color: #61b1ef;
+                        font-size: 14px;
+                    }
+                }
+                .posi-box{
+                    height: 305px;
+                    margin-top: 20px;
+                    ul{
+                        width: 100%;
+                        height: 100%;
+                        li{
+                            width: 380px;
+                            height: 44px;
+                            float: left;
+                            padding-bottom: 20px;
+                            input{
+                                width: 378px;
+                                height: 42px;
+                                border: 1px solid #a4a4a4;
+                            }
+                        }
+                        .agree{
+                            width: 380px;
+                            height: 22px;
+                            input{
+                                height: 16px;
+                                float: left;
+                                margin-left:-178px;
+                                margin-top: 5px;
+                            }
+                            span{
+                                font-size: 12px;
+                                margin-left: -178px;
+                                a{
+                                    color: #61b1ef;
+                                    margin-left: 10px;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        .regist-btn{
+                            width: 376px;
+                            height: 38px;
+                            line-height: 38px;
+                            background: #61b1ef;
+                            text-align: center;
+                            padding-bottom: 0;
+                            a{
+                                display: block;
+                                width: 376px;
+                                height: 38px;
+                                color: #fff;
+                                font-size: 18px;
+                            }
+                        }
+                        .regist-btn{
+                            border: 2px solid #61b1ef;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

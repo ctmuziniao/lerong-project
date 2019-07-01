@@ -1,0 +1,473 @@
+@import '../modules/base.scss';
+
+.head-main{
+    width: 100%;
+    height: 120px;
+    .wrap{
+        width: 1146px;
+        height: 120px;
+        margin: 0 auto;
+        .logo{
+            width: 176px;
+            height: 60px;
+            float: left;
+            margin-top: 30px;
+        }
+        .title{
+            width: 120px;
+            height: 120px;
+            float: left;
+            line-height: 120px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+        .process{
+            width: 420px;
+            height: 60px;
+            float: right;
+            margin-top: 40px;
+            .one{
+                width: 140px;
+                height: 50px;
+                float: left;
+                position: relative;
+                .line-one{
+                    width: 70px;
+                    height: 2px;
+                    background: #3393f2;
+                    position: absolute;
+                    margin: 10px 70px;
+                }
+                .line-two{
+                    width: 140px;
+                    height: 2px;
+                    background: #ccc;
+                    position: absolute;
+                    margin: 10px 0px;
+                }
+                .line-three{
+                    width: 70px;
+                    height: 2px;
+                    background: #ccc;
+                    position: absolute;
+                    margin: 10px 0px;
+                }
+                .num{
+                    width: 20px;
+                    height: 20px;
+                    background: #ccc;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #fff;
+                    margin-left: 60px;
+                }
+                .num-one{
+                    width: 20px;
+                    height: 20px;
+                    background: #3393f2;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #fff;
+                    margin-left: 60px;
+                }
+                .text{
+                    width: 100%;
+                    height: 30px;
+                    font-size: 12px;
+                    text-align: center;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+.cart-table{
+    width: 100%;
+    height: 780px;
+    .table-top{
+        width: 100%;
+        height: 368px;
+        border-bottom: 2px solid #ccc;
+        .wrap{
+            width: 1146px;
+            height: 100%;
+            margin: 0 auto;
+            .cart-top{
+                width: 1144px;
+                height: 52px;
+                border: 1px solid #ccc;
+                .title{
+                    width: 83px;
+                    height: 50px;
+                    border-bottom: 2px solid #c80000;
+                    color: #c80000;
+                    line-height: 50px;
+                    font-size: 16px;
+                    margin-left: 20px;
+                    float: left;
+                    .total-num{
+                        color: #ff8200;
+                        margin-left: 4px;
+                    }
+                }
+                .address{
+                    width: 198px;
+                    height: 52px;
+                    line-height: 52px;
+                    float: right;
+                    font-size: 12px;
+                    span{
+                        float: left;
+                    }
+                    #addr-choose{
+                        display: block;
+                        height: 34px;
+                        border: 1px solid #ccc;
+                        float: left;
+                        margin-left: 20px;
+                        margin-top: 10px;
+                        line-height: 34px;
+                        padding: 0 20px;
+                        color: #666;
+                        background: #f9f9f9;
+                    }
+                    #addr-choose:hover{
+                        color: #c80000;
+                        border: 1px solid #c80000;
+                    }
+                }
+            }
+            .cart-center{
+                width: 1144px;
+                height: 291px;
+                margin-top: 10px;
+                .product-list-head{
+                    width: 100%;
+                    height: 38px;
+                    background: #f9f9f9;
+                    .product-selected{
+                        width: 70px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                        margin-left: 30px; 
+                        position: relative;
+                        #headAll{
+                            position: absolute;
+                            margin: 12px -10px;
+                            display: block;
+                            width: 17px;
+                            height: 17px;
+                            color: #f01e00;
+                            background: #fff;
+                            font-family: lefonticon;
+                        }
+                    }
+                    .product-content{
+                        width: 497px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                    }
+                    .product-price{
+                        width: 115px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                    }
+                    .product-number{
+                        width: 147px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                    }
+                    .product-cost{
+                        width: 139px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                    }
+                    .product-exercisable{
+                        width: 117px;
+                        height: 38px;
+                        line-height: 38px;
+                        float: left;
+                        text-align: center;
+                        font-size: 12px;
+                        color: #7f7f7f;
+                    }
+                }
+                .cart-list{
+                    width: 100%;
+                    height: 253px;
+                    border: 1px solid #ccc;
+                    .label{
+                        width: 1106px;
+                        height: 36px;
+                        margin: 0 auto;
+                        border-bottom: 1px solid #ececec; 
+                        span{
+                            width: 54px;
+                            line-height: 18px;
+                            border-radius: 3px;
+                            background: #c80000;
+                            color: #fff;
+                            float: left;
+                            font-size: 12px;
+                            text-align: center;
+                            margin-top: 10px;
+                        }
+                    }
+                    .product-select{
+                        width: 17px;
+                        height: 17px;
+                        position: relative;
+                        margin-top: 15px;
+                        margin-left: 18px;
+                        float: left;
+                        input{
+                            position: absolute;
+                            display: block;
+                            width: 17px;
+                            height: 17px;
+                            color: #f01e00;
+                            background: #fff;
+                            font-family: lefonticon;
+                        }
+                    }
+                    .product-content{
+                        width: 550px;
+                        height: 175px;
+                        float: left;
+                        background: #3393f2;
+                        margin-top: 15px;
+                    }
+                    .product-price{
+                        width: 115px;
+                        height: 20px;
+                        float: left;
+                        line-height: 20px;
+                        text-align: center;
+                        margin-top: 15px;
+                        font-size: 14px;
+                        margin-left: 10px;
+                    }
+                    .product-number{
+                        width: 147px;
+                        height: 53px;
+                        float: left;
+                        margin-top: 15px;
+                        .goods-num{
+                            width: 107px;
+                            height: 31px;
+                            margin: 0 auto;
+                            border: 1px solid #ececec;
+                            .reduce{
+                                width: 35px;
+                                height: 31px;
+                                line-height: 31px;
+                                text-align: center;
+                                float: left;
+                            }
+                            .text{
+                                width: 37px;
+                                height: 31px;
+                                float: left;
+                                input{
+                                    width: 37px;
+                                    height: 31px;
+                                    line-height: 31px;
+                                    text-align: center;
+                                    border: none;
+                                }
+                            }
+                            .add{
+                                width: 35px;
+                                height: 31px;
+                                line-height: 31px;
+                                text-align: center;
+                                float: left;
+                            }
+                        }
+                        .product-type{
+                            width: 100%;
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    }
+                    .product-cost{
+                        width: 139px;
+                        height: 20px;
+                        float: left;
+                        text-align: center;
+                        line-height: 20px;
+                        font-size: 14px;
+                        margin-top: 15px;
+                    }
+                    .product-exercisable{
+                        width: 117px;
+                        float: left;
+                        height: 20px;
+                        text-align: center;
+                        line-height: 20px;
+                        margin-top: 15px;
+                        font-size: 14px;
+                        a{
+                            color: #333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .table-bottom{
+        width: 100%;
+        height: 412px;
+        .wrap{
+            width: 1146px;
+            height: 412px;
+            margin: 0 auto;
+            .cart-action-fixed{
+                width: 100%;
+                height: 52px;
+                background: #fff;
+                .actions{
+                    width: 265px;
+                    height: 52px;
+                    line-height: 52px;
+                    float: left;
+                    font-size: 12px;
+                    position: relative;
+                    input{
+                        position: absolute;
+                        display: block;
+                        margin: 18px 15px;
+                        width: 17px;
+                        height: 17px;
+                        color: #f01e00;
+                        background: #fff;
+                        font-family: lefonticon;
+                    }
+                    span{
+                        margin-left: 45px;
+                        color: #333;
+                    }
+                    a{
+                        color: #333;
+                        padding: 0 20px;
+                    }
+                    a:hover{
+                        color: #3393f2;
+                    }
+                }
+                .cart-action-right{
+                    width: 438px;
+                    height: 52px;
+                    line-height: 52px;
+                    float: right;
+                    color: #333;
+                    .text{
+                        font-size: 12px;
+                    }
+                    .num{
+                        color: #c80000;
+                        padding: 0 2px;
+                    }
+                    .mon{
+                        font-size: 16px;
+                        color: #c80000;
+                        margin-left: 5px;
+                    }
+                    .cart-allPrice{
+                        font-size: 16px;
+                        color: #c80000;
+                    }
+                    a{
+                        display: block;
+                        width: 130px;
+                        height: 52px;
+                        float: right;
+                        line-height: 52px;
+                        text-align: center;
+                        background: #c80000;
+                        color: #fff;
+                    }
+                }
+            }
+            .cart-like{
+                width: 100%;
+                height: 340px;
+                background: #ececec;
+                margin-top: 5px;
+                .title{
+                    width: 1106px;
+                    height: 60px;
+                    line-height: 60px;
+                    margin: 0 auto;
+                    color: #333;
+                }
+                ul{
+                    width: 100%;
+                    height: 270px;
+                    background: #fff;
+                    .one{
+                        width: 183px;
+                        height: 260px;
+                        float: left;
+                        margin-left: 8px;
+                        .img{
+                            width: 185px;
+                            height: 184px;
+                            background: #f9f9f9;
+                        }
+                        .name{
+                            height: 25px;
+                            line-height: 25px;
+                            text-align: center;
+                            font-size: 14px;
+                            padding: 0 12px 10px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            margin-top: 10px;
+                            a{
+                                color: #333;
+                            }
+                            a:hover{
+                                color: #3393f2;
+                            }
+                        }
+                        .price{
+                            height: 25px;
+                            line-height: 25px;
+                            color: #c80000;
+                            font-size: 14px;
+                            padding: 0 12px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
