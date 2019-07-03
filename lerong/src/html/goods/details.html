@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/goods/details.css">
 </head>
 <body>
+    <header></header>
     <main>
         <div class="main-nav">
             <div class="wrap">
@@ -31,56 +32,81 @@
                     赛普瑞斯蓝宝石系列不粘锅套组
                 </div>
                 <div class="details-box">
-                    <div class="good-img">
-                        <div class="big-img"></div>
-                        <div class="pic-list">
-                            <a class ="prev" href=""><img src="../../images/prev.png" ></a>
-                            <div class="list"></div>
-                            <a class ="next" href=""><img src="../../images/next.png" ></a>
-                        </div>
+                    <div class="good-img" id="shop-imgs">
+                        
                     </div>
-                    <div class="product-info">
-                        <div class="title">
-                            <div class="label">乐融自营</div>
-                        </div>
-                        <div class="model">
-                            <div class="left">100%色域覆盖 | 仅重3.8kg | 1GB+8GB存储</div>
-                            <div class="right"><a href="">超5X55漫威工程纪念版新品首发</a></div>
-                        </div>
-                        <div class="price">
-                            <dl class="pre-price">
-                                <dt>价格：</dt>
-                                <dd>￥799起</dd>
-                            </dl>
-                        </div>
-                        <div class="distribution">
-                            <dl class="region">
-                                <dt>配送地址</dt>
-                                <dd><a href="">北京 北京市 朝阳区</a>
-                                <br><span>现货</span><p>前完成支付，预计（2019.07.06）之前发货</p>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="choose">
-                            <dl class="choose-top">
-                                <dt>型号</dt>
-                                <dd></dd>
-                            </dl>
-                            <dl class="choose-bottom">
-                                <dt>尺寸</dt>
-                                <dd></dd>
-                            </dl>
-                        </div>
-                        <div class="pay">
-                            <div class="all-price">
-                                <span>总价：</span><span class="all-price-one">&nbsp;&nbsp;&nbsp;￥799.00</span>
-                            </div>
-                            <div class="add"><a href="">加入购物车</a></div>
-                        </div>
+                    <div class="product-info" id="shop-argument">
+                        
                     </div>
                 </div>
             </div>
         </div>
+
+        <script type="text/html" id="template-argument">
+            <div class="title">
+                <div class="label">乐融自营</div>
+                <div class="title-name">{{data.name}}</div>
+            </div>
+            <div class="model">
+                <div class="left">{{data.configuration}}</div>
+                <div class="right"><a href="">超5X55漫威工程纪念版新品首发</a></div>
+            </div>
+            <div class="price">
+                <dl class="pre-price">
+                    <dt>价格：</dt>
+                        <dd>￥{{data.price}}起</dd>
+                </dl>
+            </div>
+            <div class="distribution">
+                <dl class="region">
+                    <dt>配送地址</dt>
+                    <dd><a href="">{{data.addr}}</a>
+                    <br><span>现货</span><p>前完成支付，预计（2019.07.06）之前发货</p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="choose">
+                <dl class="choose-top">
+                    <dt>型号</dt>
+                    <dd>{{data.name}}</dd>
+                </dl>
+                <dl class="choose-bottom">
+                    <dt>尺寸</dt>
+                    <dd>{{data.size}}</dd>
+                </dl>
+            </div>
+            <div class="pay">
+                <div class="all-price">
+                    <span>总价：</span><span class="all-price-one">&nbsp;&nbsp;&nbsp;￥{{data.price}}</span>
+                </div>
+                <div class="add"><a href="javascript:;" class="addCart">加入购物车</a></div>
+            </div>
+        </script>
+
+        <script type="text/html" id="template-img">
+        <div class="big-img">
+            <img class="zoom-img img-responsive big" src="{{data.images[0]}}" data-zoom-image="{{data.images[0]}}" alt="服务器无响应" />
+        </div>
+        <div class="pic-list">
+            <a class ="prev" href=""><img src="../../images/prev.png" ></a>
+            <div class="list" id="gal1">
+                <ul>
+                    {{each data.images img}}
+                    <li>
+                        <a href="javascript:;" data-image="{{img}}" data-zoom-image="{{img}}">
+                            <img class="img-responsive small" src="{{img}}" alt="服务器无响应" />
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <a class ="next" href=""><img src="../../images/next.png" ></a>
+        </div>
+        </script>
+        
     </main>
+    <footer></footer>
+
+    <script src="../../libs/requirejs/require.min.js" data-main="/js/goods/details"></script>
 </body>
 </html>

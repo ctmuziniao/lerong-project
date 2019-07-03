@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/goods/list.css">
 </head>
 <body>
+    <header></header>
     <main>
         <div class="main-top">
             <div class="wrap">
@@ -52,28 +53,30 @@
             </div>
             <div class="content">
                 <div class="wrap">
-                    <ul class="lists">
+                    <ul class="lists" id="lists-box">
+                        
+                    </ul>
+                    <script type="text/html" id="list-template">
+                        {{each list item}}
                         <li>
-                            <div class="img"></div>
-                            <div class="proName">超4 X75（挂架版）</div>
+                            <div class="img"><a href="/html/goods/details.html?id={{item.id}}"><img src="{{item.image}}"></a></div>
+                            <div class="proName">{{item.title}}</div>
                             <div class="proPrice">
-                                <span>￥<span class="num">14999.00</span></span>
+                                <span>￥<span class="num">{{item.price}}</span></span>
                             </div>
                             <div class="pro-evaluate">
-                                <span>38条评价</span>
+                                <span>评论</span><span>{{item.comment}}</span>
                             </div>
                             <div class="pro-btns"><a href="">立即购买</a></div>
                         </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                        {{/each}}
+                    </script>
                 </div>
             </div>
         </div>
     </main>
+    <footer></footer>
+
+    <script src="../../libs/requirejs/require.min.js" data-main="/js/goods/list"></script>
 </body>
 </html>

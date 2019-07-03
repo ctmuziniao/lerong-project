@@ -1,1 +1,5 @@
-alert(1)
+require(['./config'], () => {
+    require(['header', 'footer'], () => {
+      
+    })
+  })

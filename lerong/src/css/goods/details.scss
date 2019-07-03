@@ -1,4 +1,6 @@
 @import '../modules/base.scss';
+@import '../modules/header.scss';
+@import '../modules/footer.scss';
 
 main{
     width: 100%;
@@ -21,7 +23,7 @@ main{
                     line-height: 38px;
                 }
                 ul{
-                    width: 206px;
+                    width: 250px;
                     height: 38px;
                     line-height: 38px;
                     float: left;
@@ -78,6 +80,10 @@ main{
                             width: 448px;
                             height: 448px;
                             border: 1px solid #ccc;
+                            img{
+                                width: 448px;
+                                height: 448px;
+                            }
                         }
                         .pic-list{
                             width: 450px;
@@ -94,6 +100,19 @@ main{
                                 width: 380px;
                                 height: 90px;
                                 float: left;
+                                ul{
+                                    width: 380px;
+                                    height: 90px;
+                                    li{
+                                        width: 76px;
+                                        height: 90px;
+                                        float: left;
+                                        img{
+                                            width: 76px;
+                                            height: 90px;
+                                        }
+                                    }
+                                }
                             }
                             .next{
                                 float: left;
@@ -123,6 +142,16 @@ main{
                                 border-radius: 5px;
                                 line-height: 22px;
                                 text-align: center;
+                                float: left;
+                            }
+                            .title-name{
+                                width: 200px;
+                                height: 33px;
+                                margin-left: 20px;
+                                float: left;
+                                font-size: 14px;
+                                color: #333;
+                                font-weight: bold;
                             }
                         }
                         .model{
@@ -216,6 +245,16 @@ main{
                                 line-height: 50%;
                                 font-size: 12px;
                                 color: #ccc;
+                            }
+                            dd{
+                                width: 60px;
+                                height: 40px;
+                                line-height: 40px;
+                                border: 1px solid red;
+                                margin-left: 40px;
+                                margin-top: -25px;
+                                text-align: center;
+                                color: red;
                             }
                         }
                         .pay{
