@@ -72,6 +72,51 @@ require(['../config'], () => {
                 $('#header-cart span').addClass('header-cart-change')
               }
             })
+
+            //把商品加入购物车
+            //把当前商品存入localStorage
+            // let str = JSON.stringify(_this.detail)
+            // localStorage.setItem('cart', str)
+
+            //先取到购物车里面的数据，判断购物车是否有商品
+            let allCart = localStorage.getItem('cart')
+            if(allCart){
+              //购物车有数据不为空
+              //从localStorage中取出的是JSON字符串，所有转换一下
+              allCart = JSON.parse(allCart)
+              //判断购物车里面是否有当前这条商品
+              const isExist = allCart.some(shop => {
+                return shop.id === _this.detail.id
+              })
+              console.log(isExist)
+
+              if(isExist){
+                //说明该商品已经加入过购物车了，只需要把数量加上就可以了
+                allCart = allCart.map(shop =>{
+                  if(shop.id === _this.detail.id) shop.num++
+                  return shop
+                })
+              }else{
+                //购物车里面有数据，但没有当前要加入的这条，把这条数据push进去
+                allCart.push({
+                  ..._this.detail,
+                  num: 1,
+                  check: true
+                })
+              }
+              //修改完之后把数据重新存一次
+              localStorage.setItem('cart', JSON.stringify(allCart))
+
+            }else{
+              //购物车为空，把当前数据构造出一个新数组，再加上一个num（购物车里当前数据的数量）字段
+              let arr = [{
+                ..._this.detail,
+                num: 1,
+                check: true
+              }]
+              //把这个数组转换成JSON字符串存
+              localStorage.setItem('cart', JSON.stringify(arr))
+            }
           })
         }
       }

@@ -40,30 +40,62 @@
                     </ul>
                 </div>
                 <div class="reduced-price">
-                    <div class="title">限时购</div>
-                    <div class="main-goods">
-                        <ul>
-                            <li>
-                                <div class="product-pic"></div>
-                                <div class="product-type">
-                                    <strong>山水智能遥控塔扇（触摸版） STE-1946R</strong>
-                                </div>
-                                <div class="product-price">
-                                    ￥<span>299</span>
-                                </div>
-                                <div class="product-btn">
-                                    <a href="">立即购买</a>
-                                </div>
-                            </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="area-center">
+                    
                 </div>
             </div>
         </div>
+
+        <script type="text/html" id="show-template">
+            <div class="title">限时购</div>
+            <div class="main-goods">
+                <ul>
+                {{each list item}}
+                    <li>
+                        <div class="product-pic"><a href=""><img src="{{item.image}}"></a></div>
+                        <div class="product-type">
+                            <strong>{{item.title}}</strong>
+                        </div>
+                        <div class="product-price">
+                            ￥<span>{{item.price}}</span>
+                        </div>
+                        <div class="product-btn">
+                            <a href="">立即购买</a>
+                        </div>
+                    </li>
+                {{/each}}
+                </ul>
+            </div>
+        </script>
+
+        <script type="text/html" id="show-2-template">
+            <div class="area-header-wrap">
+                <div class="area-header-title">超级电视&nbsp;&nbsp;&nbsp;|<span>运营家庭美好生活</span></div>
+                </div>
+                <div class="area-list-type-01">
+                    <ul class="product-list">
+                        <li class="banner-01"><a href=""><img src=""></a></li>
+                        {{each list item}}
+                        <li>
+                            <div class="product-label">
+                                <span>{{item.tag}}</span>
+                            </div>
+                            <div class="product-pic">
+                                <a href="/html/goods/details.html?id={{item.id}}"><img src="{{item.image}}"></a>
+                            </div>
+                            <div class="product-type">{{item.title}}</div>
+                            <p class="product-desc">{{item.desc}}</p>
+                            <div class="product-price">￥{{item.price}}</div>
+                            <div class="product-btn">
+                                <a href="/html/goods/details.html?id={{item.id}}" class="btn-1">了解产品</a>
+                                <a href="javascript:;" class="buy-now">立即购买</a>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+        </script>
     </main>
     <footer></footer>
 

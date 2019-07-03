@@ -70,40 +70,7 @@
                         <a id="addr-choose" href="">北京北京市朝阳区</a>
                     </div>
                 </div>
-                <div class="cart-center">
-                    <div class="product-list-head">
-                        <div class="product-selected">
-                            <input id="headAll" type="checkbox" checked>
-                            <span>全选</span>
-                        </div>
-                        <div class="product-content">商品</div>
-                        <div class="product-price">单价（元）</div>
-                        <div class="product-number">数量</div>
-                        <div class="product-cost">小计</div>
-                        <div class="product-exercisable">操作</div>
-                    </div>
-                    <div class="cart-list">
-                        <div class="label"><span>乐融自营</span></div>
-                        <div class="product-select">
-                            <input type="checkbox" checked>
-                        </div>
-                        <div class="product-content"></div>
-                        <div class="product-price">999</div>
-                        <div class="product-number">
-                            <div class="goods-num">
-                                <div class="reduce"><span>-</span></div>
-                                <div class="text">
-                                    <input type="text" value="1">
-                                </div>
-                                <div class="add"><span>+</span></div>
-                            </div>
-                            <div class="product-type">有货</div>
-                        </div>
-                        <div class="product-cost">999</div>
-                        <div class="product-exercisable">
-                            <a href="">删除</a>
-                        </div>
-                    </div>
+                <div class="cart-center" id="cart-list">
                 </div>
             </div>
         </div>
@@ -111,7 +78,7 @@
             <div class="wrap">
                 <div class="cart-action-fixed">
                     <div class="actions">
-                        <input type="checkbox" checked>
+                        <input type="checkbox"  class="allCheck">
                         <span>全选</span>
                         <a href="">删除选中商品</a>
                         <a href="">继续购物</a>
@@ -119,7 +86,7 @@
                     <div class="cart-action-right">
                         <span class="text">已选择<span class="num">1</span>件商品 总价（不含运费）：</span>
                         <span class="mon">￥</span>
-                        <span class="cart-allPrice">999</span>
+                        <span class="cart-allPrice"></span>
                         <a href="">去结算</a>
                     </div>
                 </div>
@@ -137,6 +104,46 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/html" id="template-cart">
+            <div class="product-list-head">
+                <div class="product-selected">
+                </div>
+                <div class="product-content">商品</div>
+                <div class="product-price">单价（元）</div>
+                <div class="product-number">数量</div>
+                <div class="product-cost">小计</div>
+                <div class="product-exercisable">操作</div>
+            </div>
+            {{each cart data}}
+            <div class="cart-list" data-id="{{data.id}}">
+                <div class="label"><span>乐融自营</span></div>
+                <div class="product-select">
+                    <input type="checkbox" class="check" {{data.check ? 'checked' : ''}}>
+                </div>
+                <div class="product-content">
+                    <div class="product-content-minPic"><a href=""><img src="{{data.images[0]}}" ></a></div>
+                    <span class="product-content-name">{{data.name}}</span><br>
+                    <span class="product-content-configuration">{{data.configuration}}</span>
+                </div>
+                <div class="product-price">{{data.price}}</div>
+                <div class="product-number">
+                    <div class="goods-num">
+                        <div class="reduce"><span>-</span></div>
+                        <div class="text">
+                            <input type="text" value="{{data.num}}">
+                        </div>
+                        <div class="add"><span>+</span></div>
+                    </div>
+                    <div class="product-type">有货</div>
+                </div>
+                <div class="product-cost">{{(data.num*data.price).toFixed(2)}}</div>
+                <div class="product-exercisable">
+                    <a href="">删除</a>
+                </div>
+            </div>
+            {{/each}}
+        </script>
     </div>
     <footer></footer>
 
