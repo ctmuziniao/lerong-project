@@ -13,7 +13,7 @@ require(['../config'], () => {
           })
         }
         getData () {
-          const id = window.location.search.slice(4)
+          const id = parseInt(window.location.search.slice(4))
           return new Promise(resolve =>{
             $.get(`${url.rapBaseUrl}goods/detail`, {id}, resp =>{
               if(resp.code === 200){
@@ -69,7 +69,6 @@ require(['../config'], () => {
                 this.destroy()
                 let num = parseInt($('#header-cart span').html())
                 $('#header-cart span').html(++num)
-                $('#header-cart span').addClass('header-cart-change')
               }
             })
 

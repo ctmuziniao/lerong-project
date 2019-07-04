@@ -7,7 +7,8 @@ require.config({
         template: 'libs/art-template/template-web',
         url: 'js/module/url',
         zoom: 'libs/jquery-plugins/jquery.elevateZoom-3.0.8.min',
-        fly: 'libs/jquery-plugins/jquery.fly'
+        fly: 'libs/jquery-plugins/jquery.fly',
+        carousel: 'libs/jquery-plugins/ft-carousel.min'
     },
     //垫片
     shim: {
@@ -15,6 +16,9 @@ require.config({
             deps: ['jquery']
         },
         fly: {
+            deps: ['jquery']
+        },
+        carousel: {
             deps: ['jquery']
         }
     }

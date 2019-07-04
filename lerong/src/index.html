@@ -6,12 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>乐融首页</title>
     <link rel="stylesheet" href="css/index.css">
+    <style>
+            body{margin: 0;font-family: "微软雅黑";background-color: #1F1F1F;}
+            .shuffling {width: 624px;height: 336px;font-size: 40px;text-align: center;margin: 20px auto;margin-top: 0;background-color: #464576;}
+            .carousel-item{line-height: 336px;color: #fff;font-family:  Arial Black}
+    </style>
 </head>
 
 <body>
     <header></header>
     <main>
         <div class="shuffling">
+                <div class="example">
+                        <div class="ft-carousel" id="carousel_1">
+                            <ul class="carousel-inner">
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a1.jpg" /></li>
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a2.jpg" /></li>
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a3.jpg" /></li>
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a4.jpg" /></li>
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a5.jpg" /></li>
+                                <li class="carousel-item"><img src="http://localhost:1905/images/a6.jpg" /></li>
+                            </ul>
+                        </div>
+                </div>
             <div class="wrap">
                 <div class="Classification-list">
                     <ul class="classify-list">
@@ -26,7 +43,7 @@
                 <div class="product-type">
 
                 </div>
-            </div>
+            </div> 
         </div>
         <div class="main-content">
             <div class="wrap">
@@ -52,16 +69,16 @@
             <div class="main-goods">
                 <ul>
                 {{each list item}}
-                    <li>
-                        <div class="product-pic"><a href=""><img src="{{item.image}}"></a></div>
+                    <li class="banner" data-id='{{item.id}}'>
+                        <div class="product-pic"><a href="/html/goods/details.html?id={{item.id}}"><img src="{{item.images[0]}}"></a></div>
                         <div class="product-type">
-                            <strong>{{item.title}}</strong>
+                            <strong>{{item.name}}</strong>
                         </div>
                         <div class="product-price">
                             ￥<span>{{item.price}}</span>
                         </div>
                         <div class="product-btn">
-                            <a href="">立即购买</a>
+                            <a href="javascript:;" class="buy-now">立即购买</a>
                         </div>
                     </li>
                 {{/each}}
@@ -77,15 +94,15 @@
                     <ul class="product-list">
                         <li class="banner-01"><a href=""><img src=""></a></li>
                         {{each list item}}
-                        <li>
+                        <li class="banner" data-id='{{item.id}}'>
                             <div class="product-label">
                                 <span>{{item.tag}}</span>
                             </div>
                             <div class="product-pic">
-                                <a href="/html/goods/details.html?id={{item.id}}"><img src="{{item.image}}"></a>
+                                <a href="/html/goods/details.html?id={{item.id}}"><img src="{{item.images[0]}}"></a>
                             </div>
-                            <div class="product-type">{{item.title}}</div>
-                            <p class="product-desc">{{item.desc}}</p>
+                            <div class="product-type">{{item.name}}</div>
+                            <p class="product-desc">{{item.configuration}}</p>
                             <div class="product-price">￥{{item.price}}</div>
                             <div class="product-btn">
                                 <a href="/html/goods/details.html?id={{item.id}}" class="btn-1">了解产品</a>

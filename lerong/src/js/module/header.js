@@ -4,6 +4,8 @@ define(['jquery'], () => {
         this.container = $('header')
         this.init().then(() =>{
           this.search()
+          this.cartWrap = $('.header-cart-num')
+          this.calcTotalNum()
         })
       }
   
@@ -21,6 +23,23 @@ define(['jquery'], () => {
             console.log(resp)
           })
         })
+      }
+
+      //计算购物车总数量
+       calcTotalNum () {
+        let cart = localStorage.getItem('cart')
+        if(cart){
+          $('#header-cart span').addClass('header-cart-changef')
+          cart = JSON.parse(cart)
+          let totalNum = cart.reduce((num, shop) =>{
+            num += shop.num
+            return num
+          },0)
+          this.cartWrap.html(totalNum)
+        }else{
+          this.cartWrap.html(0)
+          $('#header-cart span').addClass('header-cart-change')
+        }
       }
     }
     return new Header()

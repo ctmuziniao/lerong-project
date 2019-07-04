@@ -496,7 +496,7 @@ header{
                     }
                 }
                 .cart-action-right{
-                    width: 438px;
+                    width: 500px;
                     height: 52px;
                     line-height: 52px;
                     float: right;
@@ -504,9 +504,10 @@ header{
                     .text{
                         font-size: 12px;
                     }
-                    .num{
+                    .cart-action-right-num{
                         color: #c80000;
                         padding: 0 2px;
+                        font-size: 14px;
                     }
                     .mon{
                         font-size: 16px;
