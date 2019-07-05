@@ -80,7 +80,7 @@
                     <div class="actions">
                         <input type="checkbox"  class="allCheck">
                         <span>全选</span>
-                        <a href="">删除选中商品</a>
+                        <a href="javascript:;" class="remove-checkedgoods">删除选中商品</a>
                         <a href="">继续购物</a>
                     </div>
                     <div class="cart-action-right">
@@ -129,17 +129,17 @@
                 <div class="product-price">{{data.price}}</div>
                 <div class="product-number">
                     <div class="goods-num">
-                        <div class="reduce"><span>-</span></div>
+                        <div class="reduce"><span class="reduce-num">-</span></div>
                         <div class="text">
                             <input type="text" value="{{data.num}}">
                         </div>
-                        <div class="add"><span>+</span></div>
+                        <div class="add"><span class="increase-num">+</span></div>
                     </div>
                     <div class="product-type">有货</div>
                 </div>
                 <div class="product-cost">{{(data.num*data.price).toFixed(2)}}</div>
                 <div class="product-exercisable">
-                    <a href="">删除</a>
+                    <a href="javascript:;" class="remove-goods">删除</a>
                 </div>
             </div>
             {{/each}}

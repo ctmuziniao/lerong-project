@@ -12,6 +12,8 @@ require(['../config'], () => {
             this.renderArgument(detail)
           })
         }
+
+        //获取rap2里面地址为goods/detail的数据
         getData () {
           const id = parseInt(window.location.search.slice(4))
           return new Promise(resolve =>{
@@ -29,17 +31,20 @@ require(['../config'], () => {
           })
         }
 
+        //用获取到的数据去渲染详情页的右边的商品的信息
         renderArgument(detail) {
           let str = template('template-argument',{ data: detail })
           this.box.html(str)
         }
 
+        //用获取到的数据去渲染详情页左边的图片展示
         renderDetail (detail) {
           let str = template('template-img',{ data: detail})
           this.container.html(str)
           this.zoomImg()
         }
 
+        //引用放大镜插件
         zoomImg () {
           $('.zoom-img').elevateZoom({
             gallery: 'gal1', // ul父级盒子的id
@@ -50,9 +55,12 @@ require(['../config'], () => {
           })
         }
 
+        //将详情页的这条商品添加到购物车
         addToCart () {
           let _this = this
           $('.product-info').on('click', '.addCart', function(){
+
+            //点击添加购物车按钮，让当前要添加的商品飞入购物车
             const src = _this.detail.images[0]
             $(`<img src="${src}" style="width:40px; height:40px; border-radius:50%">`).fly({
               start: {

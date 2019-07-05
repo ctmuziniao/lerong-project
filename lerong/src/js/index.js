@@ -4,13 +4,18 @@ require(['./config'], () => {
         constructor() {
           this.container = $('.reduced-price')
           this.show = $('.area-center')
+          this.listBox = $('.product-type')
           this.addCarousel()
+          this.showClassified()
+          this.outClassified()
           this.init().then((list) =>{
             this.renderShow(list)
             this.drawShow(list)
             this.addToCart()
           })
         }
+
+        //获取rap2里面地址为goods/list的数据
         init () {
           return new Promise(resolve =>{
             $.get(url.rapBaseUrl + 'goods/list',resp =>{
@@ -21,9 +26,48 @@ require(['./config'], () => {
           })
         }
 
+        //轮播图
         addCarousel () {
           $("#carousel_1").FtCarousel()
         }
+
+        //鼠标进入轮播图上面的分类列表
+        showClassified () {
+          let _this = this
+          $('.classify-list').on('mouseover', 'li', function() {
+            _this.listBox.addClass('product-type-clone')
+            _this.overShowClassified()
+          })
+        }
+
+        //进入根据分类列表来展示分类的div
+        overShowClassified () {
+          let _this = this
+          $('.product-type').on('mouseover', function() {
+            _this.listBox.addClass('product-type-clone')
+            _this.outShowClassified()
+          })
+        }
+
+        //离开根据分类列表来展示分类的div
+        outShowClassified () {
+          let _this = this
+          $('.product-type').on('mouseout', function() {
+            _this.listBox.removeClass('product-type-clone')
+            _this.listBox.addClass('product-type')
+          })
+        }
+
+        //鼠标离开轮播图上面的分类列表
+        outClassified () {
+          let _this = this
+          $('.classify-list').on('mouseout','li', function() {
+            _this.listBox.removeClass('product-type-clone')
+            _this.listBox.addClass('product-type')
+          })
+        }
+
+        //用获取到的数据渲染限时购列表内容
         renderShow (list) {
           let arr1 = []
           $.each(list,(indexinfo,index) =>{
@@ -34,6 +78,8 @@ require(['./config'], () => {
           let str = template('show-template', {list : arr1})
           this.container.html(str)
         }
+
+        //用获取到的数据渲染超级电视列表内容
         drawShow (list) {
           var arr2 = []
           $.each(list,(indexinfo,index) =>{
@@ -45,9 +91,10 @@ require(['./config'], () => {
           let str = template('show-2-template', {list : arr2})
           this.show.html(str)
         }
+
+        //首页展示的商品添加到购物车
         addToCart () {
           let _this = this
-
           //限时购
           $('.reduced-price').on('click', '.buy-now',function(){
             const id =$(this).parents('.banner').attr('data-id')

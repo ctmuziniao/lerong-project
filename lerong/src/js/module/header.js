@@ -9,6 +9,7 @@ define(['jquery'], () => {
         })
       }
   
+      //加载头文件
       init () {
         return new Promise(resolve => {
           this.container.load('http://localhost:1905/html/module/header.html', resolve)

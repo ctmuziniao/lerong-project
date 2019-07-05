@@ -18,6 +18,7 @@ require(['../config'], () => {
           
         // }
 
+        //获取rap2里面地址为goods/list里面的数据
         init () {
           return new Promise(resolve => {
             $.get(url.rapBaseUrl + 'goods/list',resp =>{
@@ -28,6 +29,7 @@ require(['../config'], () => {
           })
         }
 
+        //用获取到的rap2的数据渲染列表页面
         draw (list) {
           console.log(list)
           let str = template('list-template',{ list })
@@ -35,6 +37,7 @@ require(['../config'], () => {
           this.container.html(str)
         }
 
+        //将列表页面展示的商品添加到购物车
         addToCart (list) {
           console.log(list)
           $('.lists').on('click', '.buy-now',function(){
@@ -58,10 +61,6 @@ require(['../config'], () => {
                 $('#header-cart span').html(++num)
               }
             })
-            // var e = e.target
-            // let li = e.parentNode.parentNode
-            // console.log(li)
-            console.log(id)
             let allCart = localStorage.getItem('cart')
             if(allCart){
               allCart = JSON.parse(allCart)

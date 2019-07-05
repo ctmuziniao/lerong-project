@@ -101,11 +101,8 @@ main{
                             width: 100%;
                             height: 64px;
                             line-height: 64px;
-                            padding: 0 24px;
+                            text-align: center;
                             font-size: 14px;
-                            span{
-                                margin-left: 50px;
-                            }
                         }
                         a:hover{
                             background: #2884c7;
@@ -118,7 +115,14 @@ main{
                 height: 420px;
                 float: left;
                 background: #fff;
+                display: none;
+            }
+            .product-type-clone{
                 display: block;
+                width: 931px;
+                height: 420px;
+                float: left;
+                background: #fff;
             }
         }
     }

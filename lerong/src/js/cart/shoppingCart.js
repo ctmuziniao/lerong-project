@@ -6,12 +6,19 @@ require(['../config'], () => {
           this.allPrice = $('.cart-allPrice')
           this.allCheck = $('.allCheck')
           this.checkNum = $('.cart-action-right-num')
+          this.removeAllGoods = $('.remove-checkedgoods')
           this.init()
           this.calcMoney()
           this.checkChange()
           this.allCheckChange()
+          this.reduceNumber()
+          this.increaseNumber()
+          this.removeGoods()
+          this.removeCheckedGoods()
           this.findGoods()
         }
+
+        //获取localStorage里面保存的数据
         init () {
           this.cart = JSON.parse(localStorage.getItem('cart'))
 
@@ -24,9 +31,12 @@ require(['../config'], () => {
             return shop.check === true
           })
           this.allCheck.prop('checked', isAllCheck)
+          //每一次刷新页面都要重新计算购物车里选中状态的商品的总价和数量
+          this.calcMoney()
+          this.findGoods()
           }
 
-
+        //改变单个商品的选中状态
         checkChange () {
           let _this = this
           //事件委托  给container帮change事件
@@ -39,7 +49,6 @@ require(['../config'], () => {
               //console.log(shop)
               return shop
             })
-            console.log(_this.cart)
             //把修改过后的cart重新存入localStorage
             localStorage.setItem('cart', JSON.stringify(_this.cart))
             _this.calcMoney()
@@ -54,7 +63,7 @@ require(['../config'], () => {
           })
         }
 
-        //全选
+        //实现全选按钮的功能
         allCheckChange () {
           let _this = this
           this.allCheck.on('change', function(){
@@ -67,6 +76,78 @@ require(['../config'], () => {
             $('.check').prop('checked', ischeck)
             _this.calcMoney()
             _this.findGoods()
+          })
+        }
+
+        //减少商品数量
+        reduceNumber () {
+          let _this = this
+          this.container.on('click','.reduce-num', function() {
+            const id = $(this).parents('.cart-list').attr('data-id')
+            _this.cart = _this.cart.filter(shop =>{
+              if(shop.id == id){
+                if(shop.num > 1){
+                  shop.num --
+                  return shop
+                }
+              }else{
+                return shop
+              }
+            })
+            localStorage.setItem('cart', JSON.stringify(_this.cart))
+            _this.init()
+          })
+        }
+
+        //增加商品数量
+        increaseNumber () {
+          let _this = this
+          this.container.on('click','.increase-num', function() {
+            const id = $(this).parents('.cart-list').attr('data-id')
+            _this.cart = _this.cart.map(shop => {
+              if(shop.id == id){
+                shop.num += 1
+              }
+              return shop
+            })
+            //把修改过后的cart重新存入localStorage
+            localStorage.setItem('cart', JSON.stringify(_this.cart))
+            _this.init()
+          })
+        }
+
+        //删除商品
+        removeGoods () {
+          let _this = this
+          this.container.on('click', '.remove-goods', function() {
+            const id = $(this).parents('.cart-list').attr('data-id')
+            _this.cart = _this.cart.filter(shop =>{
+              if(shop.id == id){
+              }else{
+                return shop
+              }
+            })
+            //把修改过后的cart重新存入localStorage
+            localStorage.setItem('cart', JSON.stringify(_this.cart))
+            _this.init()
+          })
+        }
+
+        //删除选中的商品
+        removeCheckedGoods () {
+          let _this = this
+          this.removeAllGoods.on('click', function() {
+            _this.cart = _this.cart.filter(shop =>{
+              if(shop.check === true){
+
+              }else{
+                return shop
+              }
+            })
+            console.log(_this.cart)
+            //把修改过后的cart重新存入localStorage
+            localStorage.setItem('cart', JSON.stringify(_this.cart))
+            _this.init()
           })
         }
 
