@@ -1,8 +1,15 @@
-define(['jquery'], () => {
+define(['jquery','cookie'], () => {
     class Header {
       constructor () {
+        console.dir($)
         this.container = $('header')
         this.init().then(() =>{
+          this.li1 = $('#clearfix')
+          this.li2 = $('#li-2')
+          this.hello = $('.hello')
+          this.findUser()
+          this.exitBtn = $('.exit')
+          this.exitLogin()
           this.search()
           this.cartWrap = $('.header-cart-num')
           this.calcTotalNum()
@@ -13,6 +20,32 @@ define(['jquery'], () => {
       init () {
         return new Promise(resolve => {
           this.container.load('http://localhost:1905/html/module/header.html', resolve)
+        })
+      }
+      
+      //加载欢迎您
+      findUser () {
+        let userInfo = $.cookie('username')
+        console.log(userInfo)
+        if(userInfo){
+          console.log(1)
+          this.li1.addClass('li-none')
+          this.li2.addClass('li-block')
+          this.hello.html(userInfo)
+        }else{
+          this.li1.addClass('clearfix-1')
+          this.li2.addClass('li-5')
+        }
+      }
+
+      //退出登录
+      exitLogin () {
+        this.exitBtn.on('click', () =>{
+            $.removeCookie('username', '/')
+            this.li2.removeClass('li-block')
+            this.li2.addClass('li-5')
+            this.li1.removeClass('li-none')
+            this.li1.addClass('clearfix-1')
         })
       }
 

@@ -1,5 +1,5 @@
 require(['../config'], () => {
-    require(['template','footer'], (template) => {
+    require(['template','header','footer'], (template) => {
       class Cart{
         constructor() {
           this.container  = $('#cart-list')
@@ -34,7 +34,21 @@ require(['../config'], () => {
           //每一次刷新页面都要重新计算购物车里选中状态的商品的总价和数量
           this.calcMoney()
           this.findGoods()
+          this.vainCart()
           }
+
+          //空购物车
+        vainCart () {
+          let allCart = localStorage.getItem('cart')
+          console.log(allCart)
+          if(allCart === '[]'){
+            $(".vain-cart").removeClass("hide");
+            $(".table-top").addClass("hide")
+          }else{
+            $(".table-top").removeClass("hide");
+            $(".vain-cart").addClass("hide")
+          }
+        }
 
         //改变单个商品的选中状态
         checkChange () {
@@ -163,6 +177,14 @@ require(['../config'], () => {
 
           //显示到页面
           this.checkNum.html(this.num)
+          if(this.num > 0){
+            $('.header-cart-num').html(this.num)
+            $('#header-cart span').removeClass('header-cart-change')
+            $('#header-cart span').addClass('header-cart-changef')
+          }else{
+            $('#header-cart span').removeClass('header-cart-changef')
+            $('#header-cart span').addClass('header-cart-change')
+          }
         }
 
         //计算选中商品总价

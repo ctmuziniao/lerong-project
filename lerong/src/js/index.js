@@ -127,7 +127,6 @@ require(['./config'], () => {
               const isExist = allCart.some(shop =>{
                 return shop.id == id
               })
-              console.log(isExist)
               if(isExist){
                 //说明该商品已经加入过购物车了，只需要把数量加上就可以了
                 allCart = allCart.map(shop =>{
@@ -152,7 +151,6 @@ require(['./config'], () => {
                 num: 1,
                 check: true
               }]
-              console.log(arr)
               //把这个数组转换成JSON字符串存
               localStorage.setItem('cart', JSON.stringify(arr))
             }
@@ -183,14 +181,12 @@ require(['./config'], () => {
             // var e = e.target
             // let li = e.parentNode.parentNode
             // console.log(li)
-            console.log(id)
             let allCart = localStorage.getItem('cart')
             if(allCart){
               allCart = JSON.parse(allCart)
               const isExist = allCart.some(shop =>{
                 return shop.id == id
               })
-              console.log(isExist)
               if(isExist){
                 //说明该商品已经加入过购物车了，只需要把数量加上就可以了
                 allCart = allCart.map(shop =>{
@@ -215,7 +211,6 @@ require(['./config'], () => {
                 num: 1,
                 check: true
               }]
-              console.log(arr)
               //把这个数组转换成JSON字符串存
               localStorage.setItem('cart', JSON.stringify(arr))
             }

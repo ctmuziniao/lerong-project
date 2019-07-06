@@ -8,7 +8,8 @@ require.config({
         url: 'js/module/url',
         zoom: 'libs/jquery-plugins/jquery.elevateZoom-3.0.8.min',
         fly: 'libs/jquery-plugins/jquery.fly',
-        carousel: 'libs/jquery-plugins/ft-carousel.min'
+        carousel: 'libs/jquery-plugins/ft-carousel.min',
+        cookie: 'libs/jquery-plugins/jquery.cookie'
     },
     //垫片
     shim: {
@@ -19,6 +20,9 @@ require.config({
             deps: ['jquery']
         },
         carousel: {
+            deps: ['jquery']
+        },
+        cookie: {
             deps: ['jquery']
         }
     }
