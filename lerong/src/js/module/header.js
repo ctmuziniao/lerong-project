@@ -1,7 +1,6 @@
 define(['jquery','cookie'], () => {
     class Header {
       constructor () {
-        console.dir($)
         this.container = $('header')
         this.init().then(() =>{
           this.li1 = $('#clearfix')
@@ -26,9 +25,7 @@ define(['jquery','cookie'], () => {
       //加载欢迎您
       findUser () {
         let userInfo = $.cookie('username')
-        console.log(userInfo)
         if(userInfo){
-          console.log(1)
           this.li1.addClass('li-none')
           this.li2.addClass('li-block')
           this.hello.html(userInfo)
@@ -54,7 +51,6 @@ define(['jquery','cookie'], () => {
         $('#search').on('keyup', function (){
           let inputValue = $(this).val()
           $.getJSON(`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${inputValue}&cb=?`, resp =>{
-            console.log(resp)
           })
         })
       }

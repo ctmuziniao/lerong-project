@@ -21,6 +21,7 @@ require(['../config'], () => {
         //获取localStorage里面保存的数据
         init () {
           this.cart = JSON.parse(localStorage.getItem('cart'))
+          
 
           //有数据的情况
           let str = template('template-cart', { cart: this.cart })

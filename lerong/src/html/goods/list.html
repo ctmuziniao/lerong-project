@@ -20,17 +20,18 @@
                 <div class="chose">
                     <span>已选择</span>
                     <div class="chose-drop">
-                        <a href="">超级电视&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X</a>
+                        <span id="selected">全部系列</span>
                     </div>
                 </div>
                 <div class="separ">
                     <span>分类</span>
                     <div class="classify">
                         <ul class="classify-list">
-                            <li><a href="">uMax系列</a></li>
-                            <li><a href="">X系列</a></li>
-                            <li><a href="">超5系列</a></li>
-                            <li><a href="">漫威系列</a></li>
+                            <li><a href="javascript:;" id="Zero-series">Zero系列</a></li>
+                            <li><a href="javascript:;" id="y-series">Y系列</a></li>
+                            <li><a href="javascript:;" id="x-series">X系列</a></li>
+                            <li><a href="javascript:;" id="c5-series">超5系列</a></li>
+                            <li><a href="javascript:;" id="mw-series">漫威系列</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,13 +42,17 @@
                 <div class="wrap">
                     <div class="left">
                         <a class="one" href="">综合</a><span>|</span>
-                        <a href="">最新</a><span>|</span>
-                        <a href="">价格</a><span>|</span>
-                        <a href="">评论数</a>
+                        <div id="goods-list-price">价格
+                            <span id="increase">从低到高</span>
+                            <span id="reduce">从高到底</span>
+                        </div><span>|</span>
+                        <div id="goods-list-price" class="box2">评论
+                            <span id="increase" class="increase-comment">从少到多</span>
+                            <span id="reduce" class="reduce-comment">从多到少</span>
+                        </div>
                     </div>
                     <div class="right">
-                        <span>为您检测到<span>29</span>个商品</span>
-                        <span class="num">1</span><span>/3</span>
+                        <span>为您检测到<span id="list-num">5</span>个商品</span>
                     </div>
                 </div>
             </div>
