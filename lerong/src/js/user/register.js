@@ -46,7 +46,7 @@ require(['../config'], () => {
                           window.location.href = './login.html'
                       }
                     }else{
-                        alert('注册失败')
+                        alert('注册失败,两次密码输入不一致，请重新输入')
                         window.location.href = './register.html'
                     }
                     

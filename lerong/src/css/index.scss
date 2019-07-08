@@ -75,14 +75,10 @@ main{
             right: 0;
             background: url(http://localhost:1905/images/shuffling-next.png) no-repeat;
         }
-        .wrap{
-            width: 1146px;
-            height: 420px;
-            float: left;
-            margin-left: 60px;
-            position: absolute;
-            top: 0;
             .Classification-list{
+                position: absolute;
+                left: 60px;
+                top: 0px;
                 width: 215px;
                 height: 420px;
                 float: left;
@@ -111,6 +107,9 @@ main{
                 }
             }
             .product-type{
+                position: absolute;
+                top: 0;
+                left: 275px;
                 width: 931px;
                 height: 420px;
                 float: left;
@@ -124,7 +123,6 @@ main{
                 float: left;
                 background: #fff;
             }
-        }
     }
     .main-content{
         width: 100%;

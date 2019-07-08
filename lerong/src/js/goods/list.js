@@ -230,7 +230,9 @@ require(['../config'], () => {
               onEnd: function () {
                 this.destroy()
                 let num = parseInt($('#header-cart span').html())
+                let num2 = parseInt($('#footer-cart-num').html())
                 $('#header-cart span').html(++num)
+                $('#footer-cart-num').html(++num2)
               }
             })
             let allCart = localStorage.getItem('cart')

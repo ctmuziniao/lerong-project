@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结算</title>
+    <link rel="stylesheet" href="../../css/cart/Clearing.css">
+</head>
+<body>
+    <header></header>
+    <main>
+    <div class="head-main">
+        <div class="wrap">
+            <div class="process">
+                <ul class="shop-steps">
+                    <li class="one">
+                        <div class="line-one"></div>
+                        <div class="num-one">1</div>
+                        <div class="text">我的购物车</div>
+                    </li>
+                    <li class="one">
+                        <div class="line-two"></div>
+                        <div class="num" id="num-two">2</div>
+                        <div class="text">填写核对订单信息</div>
+                    </li>
+                    <li class="one">
+                        <div class="line-three"></div>
+                        <div class="num">3</div>
+                        <div class="text">成功提交订单</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clear-content">
+        <div class="wrap">
+            <div class="top">
+                <ul>
+                    <li>
+                        <span>收货人信息</span>
+                        <div class="user-message">
+                            <a href="javascript:;">新增收货人地址</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>支付方式</span>
+                        <div>在线支付</div>
+                    </li>
+                    <li>
+                        <span>配送方式</span>
+                        <div>快递配送</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <div class="title">
+                    <p>商品列表</p>
+                    <a href="http://localhost:1905/html/cart/shoppingCart.html">>返回购物车修改所选商品</a>
+                </div>
+                <div class="goods-list" id="good-list">
+
+                </div>
+            </div>
+            <div class="pay">
+                <div class="cart-action-right">
+                    <span class="text">已选择<span class="cart-action-right-num">0</span>件商品 总价（不含运费）：</span>
+                    <span class="mon">￥</span>
+                    <span class="cart-allPrice"></span>
+                    <a href="" id="success-pay">支付</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="template-cart">
+        <div class="product-list-head">
+            <div class="product-selected">
+            </div>
+            <div class="product-content">商品</div>
+            <div class="product-price">单价（元）</div>
+            <div class="product-number">数量</div>
+            <div class="product-cost">小计</div>
+        </div>
+        {{each cart data}}
+        <div class="cart-list" data-id="{{data.id}}">
+            <div class="label"><span>乐融自营</span></div>
+            <div class="product-content">
+                <div class="product-content-minPic"><a href="http://localhost:1905/html/goods/details.html?id={{data.id}}"><img src="{{data.images[0]}}" ></a></div>
+                <span class="product-content-name">{{data.name}}</span><br>
+                <span class="product-content-configuration">{{data.configuration}}</span>
+            </div>
+            <div class="product-price">{{data.price}}</div>
+            <div class="product-number">
+                <div class="goods-num">{{data.num}}
+                </div>
+                <div class="product-type">有货</div>
+            </div>
+            <div class="product-cost">{{(data.num*data.price).toFixed(2)}}</div>
+        </div>
+        {{/each}}
+    </script>
+    </main>
+    <footer></footer>
+
+
+
+    <script src="../../libs/requirejs/require.min.js" data-main="/js/cart/Clearing"></script>
+</body>
+</html>

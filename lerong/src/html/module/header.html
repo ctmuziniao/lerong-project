@@ -35,14 +35,23 @@
                         <div class="wrap">
                             <input type="text" class="search-text" id="search">
                             <button type="button" class="search-btn">搜索</button>
+                            <ul class="search-box" id="search-content">
+
+                            </ul>
                         </div>
                     </div>
                     <div class="shopping-cart">
                         <div class="wrap" id="header-cart">
-                            <a href="http://localhost:1905/html/cart/shoppingCart.html" id="shopCart">购物车</a>
+                            <a href="http://localhost:1905/html/cart/shoppingCart.html" id="shopCart">购物车<img src="http://localhost:1905/images/cart.png"></a>
                             <span class="header-cart-num"></span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <script type="text/html" id="search-temp">
+                {{each data.s item}}
+                <li>{{item}}</li>
+                {{/each}}
+            </script>
         </header>

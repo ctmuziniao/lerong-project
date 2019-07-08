@@ -1,13 +1,17 @@
 require(['../config'], () => {
-    require(['template','header','footer'], (template) => {
+    require(['template','url','header','footer'], (template, url) => {
       class Cart{
         constructor() {
           this.container  = $('#cart-list')
+          this.loveBox =$('#cart-love')
           this.allPrice = $('.cart-allPrice')
           this.allCheck = $('.allCheck')
           this.checkNum = $('.cart-action-right-num')
           this.removeAllGoods = $('.remove-checkedgoods')
           this.init()
+          this.getDataLove().then((list)=>{
+            this.renderLove(list)
+          })
           this.calcMoney()
           this.checkChange()
           this.allCheckChange()
@@ -38,10 +42,32 @@ require(['../config'], () => {
           this.vainCart()
           }
 
+        //购物车下面的猜你喜欢展示效果的数据获取
+        getDataLove () {
+          return new Promise(resolve =>{
+            $.get(url.rapBaseUrl + 'goods/list',resp =>{
+              if(resp.code===200){
+                resolve(resp.body.list)
+              }
+            })
+          })
+        }
+
+        //拿到数据进行猜你喜欢模块的页面的渲染
+        renderLove (list) {
+          let arr = []
+          $.each(list,(indexinfo,index) =>{
+            if(indexinfo<5){
+              arr.push(index)
+            }
+          })
+          let str = template('template-love', {list : arr})
+          this.loveBox.html(str)
+        }
+
           //空购物车
         vainCart () {
           let allCart = localStorage.getItem('cart')
-          console.log(allCart)
           if(allCart === '[]'){
             $(".vain-cart").removeClass("hide");
             $(".table-top").addClass("hide")
@@ -180,6 +206,7 @@ require(['../config'], () => {
           this.checkNum.html(this.num)
           if(this.num > 0){
             $('.header-cart-num').html(this.num)
+            $('#footer-cart-num').html(this.num)
             $('#header-cart span').removeClass('header-cart-change')
             $('#header-cart span').addClass('header-cart-changef')
           }else{

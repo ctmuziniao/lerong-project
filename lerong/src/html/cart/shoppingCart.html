@@ -62,23 +62,18 @@
                         <a href="">继续购物</a>
                     </div>
                     <div class="cart-action-right">
-                        <span class="text">已选择<span class="cart-action-right-num">1</span>件商品 总价（不含运费）：</span>
+                        <span class="text">已选择<span class="cart-action-right-num">0</span>件商品 总价（不含运费）：</span>
                         <span class="mon">￥</span>
                         <span class="cart-allPrice"></span>
-                        <a href="">去结算</a>
+                        <a href="http://localhost:1905/html/cart/Clearing.html">去结算</a>
                     </div>
                 </div>
                 <div class="cart-like">
-                    <div class="title">猜你喜欢</div>
-                    <ul>
-                        <li class="one">
-                            <div class="img"></div>
-                            <div class="name">
-                                <a href="">乐视Type-c快速电源适配器</a>
-                            </div>
-                            <div class="price">￥89.00</div>
-                        </li>
-                    </ul>
+                        <div class="title" >猜你喜欢</div>
+                        <div id="cart-love">
+
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -100,7 +95,7 @@
                     <input type="checkbox" class="check" {{data.check ? 'checked' : ''}}>
                 </div>
                 <div class="product-content">
-                    <div class="product-content-minPic"><a href=""><img src="{{data.images[0]}}" ></a></div>
+                    <div class="product-content-minPic"><a href="http://localhost:1905/html/goods/details.html?id={{data.id}}"><img src="{{data.images[0]}}" ></a></div>
                     <span class="product-content-name">{{data.name}}</span><br>
                     <span class="product-content-configuration">{{data.configuration}}</span>
                 </div>
@@ -121,6 +116,20 @@
                 </div>
             </div>
             {{/each}}
+        </script>
+
+        <script type="text/html" id="template-love">
+            <ul>
+                {{each list item}}
+                <li class="one">
+                    <div class="img"><a href="http://localhost:1905/html/goods/details.html?id={{item.id}}"><img src="{{item.images[0]}}"></a></div>
+                    <div class="name">
+                        <a href="">{{item.name}}</a>
+                    </div>
+                    <div class="price">￥{{item.price}}</div>
+                </li>
+                {{/each}}
+            </ul>
         </script>
     </div>
     <footer></footer>

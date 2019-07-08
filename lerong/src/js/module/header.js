@@ -1,4 +1,4 @@
-define(['jquery','cookie'], () => {
+define(['template','jquery','cookie'], (template) => {
     class Header {
       constructor () {
         this.container = $('header')
@@ -38,7 +38,7 @@ define(['jquery','cookie'], () => {
       //退出登录
       exitLogin () {
         this.exitBtn.on('click', () =>{
-            $.removeCookie('username', '/')
+            $.removeCookie('username')
             this.li2.removeClass('li-block')
             this.li2.addClass('li-5')
             this.li1.removeClass('li-none')
@@ -49,8 +49,11 @@ define(['jquery','cookie'], () => {
       //搜索框
       search () {
         $('#search').on('keyup', function (){
+          $('.search-box').addClass('search-box2')
           let inputValue = $(this).val()
           $.getJSON(`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${inputValue}&cb=?`, resp =>{
+            let str = template('search-temp',{data:resp})
+            $('#search-content').html(str)
           })
         })
       }
