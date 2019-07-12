@@ -90,6 +90,8 @@ require(['./config'], () => {
           this.arr2 = arr2
           let str = template('show-2-template', {list : arr2})
           this.show.html(str)
+          let str2 = template('show-3-template', {list : arr2})
+          this.listBox.html(str2)
         }
 
         //首页展示的商品添加到购物车

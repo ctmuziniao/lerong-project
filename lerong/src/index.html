@@ -31,15 +31,15 @@
                 </div>
                 <div class="Classification-list">
                     <ul class="classify-list">
-                        <li><a href="javascript:;">爆款推荐</a></li>
-                        <li><a href="javascript:;">屏幕尺寸</a></li>
-                        <li><a href="javascript:;">适用场景</a></li>
-                        <li><a href="javascript:;">观看距离</a></li>
-                        <li><a href="javascript:;">精选配件</a></li>
-                        <li><a href="javascript:;">生活之家</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">爆款推荐</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">屏幕尺寸</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">适用场景</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">观看距离</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">精选配件</a></li>
+                        <li><a href="http://localhost:1905/html/goods/list.html">生活之家</a></li>
                     </ul>
                 </div>
-                <div class="product-type">
+                <div class="product-type" id="product-type-list">
 
                 </div>
         </div>
@@ -110,6 +110,17 @@
                         {{/each}}
                     </ul>
                 </div>
+        </script>
+
+        <script type="text/html" id="show-3-template">
+            <ul>
+                {{each list item}}
+                <li><a href="/html/goods/details.html?id={{item.id}}">
+                    <div class="img"><img src="{{item.images[0]}}" ></div>
+                    <div class="name">{{item.name}}</div>
+                </a></li>
+                {{/each}}
+            </ul>
         </script>
     </main>
     <footer></footer>
